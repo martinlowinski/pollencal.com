@@ -1,9 +1,5 @@
-stages:
-  - deploy
-
 pages:
   image: node:16
-  stage: deploy
   before_script:
     - apt-get update
     - apt-get install -y brotli
