@@ -1,5 +1,6 @@
 .sass-cache/
 .*.swp
+.*.swo
 .DS_Store
 dist/
 node_modules/
