@@ -61,14 +61,16 @@
     </div>
 
     <div class="d-grid gap-2">
-      <a target="_blank" rel="noopener" href="webcal://pollencal.com/?location=Ditzingen&pollen=grass" class="btn btn-primary btn-lg">Add to your Calendar</a>
+      <a target="_blank" rel="noopener" href="webcal://pollencal.com/?location=Ditzingen&pollen=grass" class="btn btn-primary btn-lg" class:disabled={inputLocation === ''}>Add to your Calendar</a>
     </div>
   </form>
+  {#if inputLocation}
   <div class="bg-light text-center">
     <pre><samp>
     {baseUrl}?location={inputLocation}&pollen={selectedPollen}
     </samp></pre>
   </div>
+  {/if}
 </div>
 </div>
 
