@@ -1,8 +1,10 @@
 <script>
 	import { spring } from 'svelte/motion';
+  import Geolocation from "svelte-geolocation";
 
   const defaultPollen = 'grass';
 
+  let coords = [];
 	let count = 0;
   let inputLocation = '';
   let selectedPollen = defaultPollen;
@@ -22,6 +24,7 @@
 	}
 </script>
 
+<Geolocation getPosition bind:coords />
 
 <div class="px-4 pt-4 my-5">
 <div class="col-lg-6 mx-auto">
