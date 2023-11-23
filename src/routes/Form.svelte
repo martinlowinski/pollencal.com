@@ -9,6 +9,8 @@
   let inputLocation = '';
   let selectedPollen = defaultPollen;
   let baseUrl = "webcal://pollencal.com/";
+
+  const swapLatLon = ([lon, lat]) => [lat, lon];
 </script>
 
 <Geolocation getPosition bind:coords />
@@ -23,7 +25,7 @@
         <label for="locationInput">Your location</label>
       </div>
       <div class="col-12">
-        <span class="form-text">Translated into the following coordinates: {#if coords}{coords}{/if}</span>
+        <span class="form-text">Translated into the following coordinates: {#if coords}{swapLatLon(coords)}{/if}</span>
       </div>
     </div>
 
@@ -63,7 +65,7 @@
   {#if coords}
   <div class="bg-light text-center">
     <pre><samp>
-    {baseUrl}?location={coords}&pollen={selectedPollen}
+    {baseUrl}?location={swapLatLon(coords)}&pollen={selectedPollen}
     </samp></pre>
   </div>
   {/if}
