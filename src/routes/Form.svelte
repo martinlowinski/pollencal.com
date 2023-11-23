@@ -8,20 +8,20 @@
   let count = 0;
   let inputLocation = '';
   let selectedPollen = defaultPollen;
-	let baseUrl = "webcal://pollencal.com/";
+  let baseUrl = "webcal://pollencal.com/";
 
-	const displayed_count = spring();
-	$: displayed_count.set(count);
-	$: offset = modulo($displayed_count, 1);
+  const displayed_count = spring();
+  $: displayed_count.set(count);
+  $: offset = modulo($displayed_count, 1);
 
-	/**
-	 * @param {number} n
-	 * @param {number} m
-	 */
-	function modulo(n, m) {
-		// handle negative numbers
-		return ((n % m) + m) % m;
-	}
+  /**
+   * @param {number} n
+   * @param {number} m
+   */
+  function modulo(n, m) {
+    // handle negative numbers
+    return ((n % m) + m) % m;
+  }
 </script>
 
 <Geolocation getPosition bind:coords />
