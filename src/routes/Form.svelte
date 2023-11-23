@@ -10,10 +10,10 @@
   let selectedPollen = defaultPollen;
   let baseUrl = "webcal://pollen.cloud.lowin.ski/";
 
-  const swapLatLon = ([lon, lat]) => [lat, lon];
+  $: webcalUrl= `${baseUrl}?location=${coords}&pollen=${selectedPollen}`;
 </script>
 
-<Geolocation getPosition bind:coords />
+<Geolocation getPosition on:position="{(e) => { coords = [e.detail.coords.latitude, e.detail.coords.longitude] }}"/>
 
 <div class="px-4 pt-4 my-5">
 <div class="col-lg-6 mx-auto">
@@ -25,7 +25,7 @@
         <label for="locationInput">Your location</label>
       </div>
       <div class="col-12">
-        <span class="form-text">Translated into the following coordinates: {#if coords}{swapLatLon(coords)}{/if}</span>
+        <span class="form-text">Translated into the following coordinates: {#if coords}{coords}{/if}</span>
       </div>
     </div>
 
@@ -59,13 +59,13 @@
     </div>
 
     <div class="d-grid gap-2">
-      <a target="_blank" rel="noopener" href="webcal://pollencal.com/?location=Ditzingen&pollen=grass" class="btn btn-primary btn-lg" class:disabled={coords == null}>Add to your Calendar</a>
+      <a target="_blank" rel="noopener" href={webcalUrl} class="btn btn-primary btn-lg" class:disabled={coords == null}>Add to your Calendar</a>
     </div>
   </form>
   {#if coords}
   <div class="bg-light text-center">
     <pre><samp>
-    {baseUrl}?location={swapLatLon(coords)}&pollen={selectedPollen}
+    {webcalUrl}
     </samp></pre>
   </div>
   {/if}
