@@ -5,7 +5,7 @@
   const defaultPollen = 'grass';
 
   let coords = [];
-	let count = 0;
+  let count = 0;
   let inputLocation = '';
   let selectedPollen = defaultPollen;
 	let baseUrl = "webcal://pollencal.com/";
