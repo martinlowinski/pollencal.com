@@ -4,6 +4,7 @@
 </script>
 
 <svelte:head>
+<title>Pollen Forecast Webcal</title>
 </svelte:head>
 
 <section>
