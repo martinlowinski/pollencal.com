@@ -4,24 +4,11 @@
 
   const defaultPollen = 'grass';
 
-  let coords = [];
+  let coords = null;
   let count = 0;
   let inputLocation = '';
   let selectedPollen = defaultPollen;
   let baseUrl = "webcal://pollencal.com/";
-
-  const displayed_count = spring();
-  $: displayed_count.set(count);
-  $: offset = modulo($displayed_count, 1);
-
-  /**
-   * @param {number} n
-   * @param {number} m
-   */
-  function modulo(n, m) {
-    // handle negative numbers
-    return ((n % m) + m) % m;
-  }
 </script>
 
 <Geolocation getPosition bind:coords />
@@ -29,9 +16,15 @@
 <div class="px-4 pt-4 my-5">
 <div class="col-lg-6 mx-auto">
   <form class="mb-3">
-    <div class="form-floating mb-3">
-      <input bind:value={inputLocation} class="form-control form-control-lg" type="text" placeholder="Berlin" id="locationInput" aria-label="Your location">
-      <label for="locationInput">Your location</label>
+    <div class="row g-4 align-items-center">
+      <div class="col-12">
+      <div class="form-floating mb-1">
+        <input bind:value={inputLocation} class="form-control" type="text" placeholder="Berlin" id="locationInput" aria-label="Your location">
+        <label for="locationInput">Your location</label>
+      </div>
+      <div class="col-12">
+        <span class="form-text">Translated into the following coordinates: {#if coords}{coords}{/if}</span>
+      </div>
     </div>
 
     <div class="d-flex flex-column flex-md-row p-4 gap-4 align-items-center justify-content-center">
@@ -64,13 +57,13 @@
     </div>
 
     <div class="d-grid gap-2">
-      <a target="_blank" rel="noopener" href="webcal://pollencal.com/?location=Ditzingen&pollen=grass" class="btn btn-primary btn-lg" class:disabled={inputLocation === ''}>Add to your Calendar</a>
+      <a target="_blank" rel="noopener" href="webcal://pollencal.com/?location=Ditzingen&pollen=grass" class="btn btn-primary btn-lg" class:disabled={coords == null}>Add to your Calendar</a>
     </div>
   </form>
-  {#if inputLocation}
+  {#if coords}
   <div class="bg-light text-center">
     <pre><samp>
-    {baseUrl}?location={inputLocation}&pollen={selectedPollen}
+    {baseUrl}?location={coords}&pollen={selectedPollen}
     </samp></pre>
   </div>
   {/if}
