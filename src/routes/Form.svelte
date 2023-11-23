@@ -8,7 +8,7 @@
   let count = 0;
   let inputLocation = '';
   let selectedPollen = defaultPollen;
-  let baseUrl = "webcal://pollencal.com/";
+  let baseUrl = "webcal://pollen.cloud.lowin.ski/";
 
   const swapLatLon = ([lon, lat]) => [lat, lon];
 </script>
