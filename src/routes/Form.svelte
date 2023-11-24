@@ -2,7 +2,7 @@
 	import { spring } from 'svelte/motion';
   import Geolocation from "svelte-geolocation";
 
-  const defaultPollen = 'grass';
+  const defaultPollen = 'grassIndex';
 
   let coords = null;
   let count = 0;
@@ -32,7 +32,7 @@
     <div class="d-flex flex-column flex-md-row p-4 gap-4 align-items-center justify-content-center">
       <div class="list-group list-group-radio d-grid gap-2 border-0">
 	<div class="position-relative">
-    <input on:change={() => (selectedPollen = 'grass')} class="form-check-input position-absolute top-50 end-0 me-3 fs-5" type="radio" name="listGroupRadioGrid" id="listGroupRadioGrid1" value="" checked>
+    <input on:change={() => (selectedPollen = 'grassIndex')} class="form-check-input position-absolute top-50 end-0 me-3 fs-5" type="radio" name="listGroupRadioGrid" id="listGroupRadioGrid1" value="" checked>
 	  <label class="list-group-item py-3 pe-5" for="listGroupRadioGrid1">
 	    <strong class="fw-semibold">🌱 Grass</strong>
 	    <span class="d-block small opacity-75">There are hundreds of types of grasses, but only a few cause allergy symptoms.</span>
@@ -40,7 +40,7 @@
 	</div>
 
 	<div class="position-relative">
-	  <input on:change={() => (selectedPollen = 'tree')} class="form-check-input position-absolute top-50 end-0 me-3 fs-5" type="radio" name="listGroupRadioGrid" id="listGroupRadioGrid2" value="">
+	  <input on:change={() => (selectedPollen = 'treeIndex')} class="form-check-input position-absolute top-50 end-0 me-3 fs-5" type="radio" name="listGroupRadioGrid" id="listGroupRadioGrid2" value="">
 	  <label class="list-group-item py-3 pe-5" for="listGroupRadioGrid2">
 	    <strong class="fw-semibold">🌳 Tree</strong>
 	    <span class="d-block small opacity-75">Almond, birch, maple etc.</span>
@@ -48,7 +48,7 @@
 	</div>
 
 	<div class="position-relative">
-	  <input on:change={() => (selectedPollen = 'weed')} class="form-check-input position-absolute top-50 end-0 me-3 fs-5" type="radio" name="listGroupRadioGrid" id="listGroupRadioGrid3" value="">
+	  <input on:change={() => (selectedPollen = 'weedIndex')} class="form-check-input position-absolute top-50 end-0 me-3 fs-5" type="radio" name="listGroupRadioGrid" id="listGroupRadioGrid3" value="">
 	  <label class="list-group-item py-3 pe-5" for="listGroupRadioGrid3">
 	    <strong class="fw-semibold">🌼 Weed</strong>
 	    <span class="d-block small opacity-75">Ragweed, sagebrush etc.</span>
