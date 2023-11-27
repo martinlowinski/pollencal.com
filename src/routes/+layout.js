@@ -1,5 +1,6 @@
 import posthog from 'posthog-js'
 import { browser } from '$app/environment';
+import { user } from '../store.js';
 
 export const load = async () => {
 
@@ -9,7 +10,10 @@ export const load = async () => {
       {
         api_host: 'https://eu.posthog.com',
         capture_pageview: false,
-        capture_pageleave: false
+        capture_pageleave: false,
+        loaded: function(posthog) {
+          user.update((id) => posthog.get_distinct_id());
+        }
       }
     )
   }

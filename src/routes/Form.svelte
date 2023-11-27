@@ -1,7 +1,7 @@
 <script>
 	import { spring } from 'svelte/motion';
   import Geolocation from "svelte-geolocation";
-  import posthog from 'posthog-js'
+  import { user } from '../store.js';
 
   const defaultPollen = 'grassIndex';
 
@@ -10,7 +10,10 @@
   let inputLocation = '';
   let selectedPollen = defaultPollen;
   let baseUrl = "webcal://pollen.cloud.lowin.ski/";
-  let distinctId = posthog.get_distinct_id();
+  let distinctId;
+  user.subscribe((id) => {
+    distinctId = id;
+  });
 
   $: webcalUrl= `${baseUrl}?location=${coords}&pollen=${selectedPollen}&id=${distinctId}`;
 </script>
