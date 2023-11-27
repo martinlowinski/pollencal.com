@@ -1,6 +1,7 @@
 <script>
 	import { spring } from 'svelte/motion';
   import Geolocation from "svelte-geolocation";
+  import posthog from 'posthog-js'
 
   const defaultPollen = 'grassIndex';
 
@@ -9,8 +10,9 @@
   let inputLocation = '';
   let selectedPollen = defaultPollen;
   let baseUrl = "webcal://pollen.cloud.lowin.ski/";
+  let distinctId = posthog.get_distinct_id();
 
-  $: webcalUrl= `${baseUrl}?location=${coords}&pollen=${selectedPollen}`;
+  $: webcalUrl= `${baseUrl}?location=${coords}&pollen=${selectedPollen}&id=${distinctId}`;
 </script>
 
 <Geolocation getPosition on:position="{(e) => { coords = [e.detail.coords.latitude, e.detail.coords.longitude] }}"/>
