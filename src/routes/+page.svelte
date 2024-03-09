@@ -16,7 +16,7 @@
         </div>
         <div class="overflow-hidden" style="max-height: 30vh;">
           <div class="container px-5">
-            <img src="{screenshot}" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+            <img src="{screenshot}" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Screenshot of calendar" width="700" height="500" loading="lazy">
           </div>
         </div>
       </div>
