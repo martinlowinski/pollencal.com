@@ -1,11 +1,7 @@
 image: node:16
 
-pages:
+build:
   image: node:16
   script:
     - npm install
     - npm run build
-    - cp -r build/ public/
-  artifacts:
-    paths:
-      - public
