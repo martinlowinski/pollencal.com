@@ -4,6 +4,7 @@
   import { user } from '../store.js';
   import { Button, Input, Label, Radio } from 'flowbite-svelte';
   import { ArrowRightOutline } from 'flowbite-svelte-icons';
+  import PollenOption from '$lib/PollenOption.svelte';
 
   const defaultPollen = 'grassIndex';
 
@@ -18,6 +19,7 @@
   });
 
   $: webcalUrl= `${baseUrl}?location=${coords}&pollen=${selectedPollen}&id=${distinctId}`;
+  $: console.log(selectedPollen);
 </script>
 
 <Geolocation getPosition on:position="{(e) => { coords = [e.detail.coords.latitude, e.detail.coords.longitude] }}"/>
@@ -37,37 +39,68 @@
     </div>
 
     <div class="py-4">
-
-  <div class="grid gap-6 w-full md:grid-cols-2 xl:grid-cols-3">
-    <Radio name="grassIndex" custom bind:group={selectedPollen} value="grassIndex" class="form-check-input position-absolute top-50 end-0 fs-5" type="radio" id="listGroupRadioGrid1" checked>
-    <div class="inline-flex justify-between items-center p-5 w-full h-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-primary-500 peer-checked:border-primary-600 peer-checked:text-primary-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
-      <div>
-        <div class="w-full text-lg font-semibold">🌱 Grass</div>
-        <div class="w-full">There are hundreds of types of grasses, but only a few cause allergy symptoms.</div>
+      <div class="grid gap-6 w-full md:grid-cols-2 xl:grid-cols-3">
+        <PollenOption bind:val={selectedPollen} name="alder">
+          <div slot="title">🌳 Alder</div>
+          <div slot="description">...</div>
+        </PollenOption>
+        <PollenOption bind:val={selectedPollen} name="ash">
+          <div slot="title">🌳 Ash</div>
+          <div slot="description">...</div>
+        </PollenOption>
+        <PollenOption bind:val={selectedPollen} name="birch">
+          <div slot="title">🌳 Birch</div>
+          <div slot="description">...</div>
+        </PollenOption>
+        <PollenOption bind:val={selectedPollen} name="cottonwood">
+          <div slot="title">🌳 Cottonwood</div>
+          <div slot="description">...</div>
+        </PollenOption>
+        <PollenOption bind:val={selectedPollen} name="elm">
+          <div slot="title">🌳 Elm</div>
+          <div slot="description">...</div>
+        </PollenOption>
+        <PollenOption bind:val={selectedPollen} name="maple">
+          <div slot="title">🌳 Maple</div>
+          <div slot="description">...</div>
+        </PollenOption>
+        <PollenOption bind:val={selectedPollen} name="olive">
+          <div slot="title">🌳 Olive</div>
+          <div slot="description">...</div>
+        </PollenOption>
+        <PollenOption bind:val={selectedPollen} name="juniper">
+          <div slot="title">🌳 Juniper</div>
+          <div slot="description">...</div>
+        </PollenOption>
+        <PollenOption bind:val={selectedPollen} name="oak">
+          <div slot="title">🌳 Oak</div>
+          <div slot="description">...</div>
+        </PollenOption>
+        <PollenOption bind:val={selectedPollen} name="pine">
+          <div slot="title">🌳 Pine</div>
+          <div slot="description">...</div>
+        </PollenOption>
+        <PollenOption bind:val={selectedPollen} name="cypress_pine">
+          <div slot="title">🌳 Cypress Pine</div>
+          <div slot="description">...</div>
+        </PollenOption>
+        <PollenOption bind:val={selectedPollen} name="hazel">
+          <div slot="title">🌳 Hazel</div>
+          <div slot="description">...</div>
+        </PollenOption>
+        <PollenOption bind:val={selectedPollen} name="graminales">
+          <div slot="title">🌱 Grasses</div>
+          <div slot="description">There are hundreds of types of grasses, but only a few cause allergy symptoms.</div>
+        </PollenOption>
+        <PollenOption bind:val={selectedPollen} name="ragweed">
+          <div slot="title">🌼 Ragweed</div>
+          <div slot="description">...</div>
+        </PollenOption>
+        <PollenOption bind:val={selectedPollen} name="mugwort">
+          <div slot="title">🌼 Mugwort</div>
+          <div slot="description">...</div>
+        </PollenOption>
       </div>
-      <ArrowRightOutline class="ms-3 w-6 h-6" />
-    </div>
-    </Radio>
-    <Radio name="treeIndex" custom bind:group={selectedPollen} value="treeIndex" class="form-check-input position-absolute top-50 end-0 fs-5" type="radio" id="listGroupRadioGrid2">
-    <div for="treeIndex" class="inline-flex justify-between items-center p-5 w-full h-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-primary-500 peer-checked:border-primary-600 peer-checked:text-primary-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
-      <div class="block">
-        <div class="w-full text-lg font-semibold">🌳 Tree</div>
-        <div class="w-full">Almond, birch, maple etc.</div>
-      </div>
-      <ArrowRightOutline class="ms-3 w-6 h-6" />
-    </div>
-    </Radio>
-    <Radio name="weedIndex" custom bind:group={selectedPollen} value="weedIndex" class="form-check-input position-absolute top-50 end-0 fs-5" type="radio" id="listGroupRadioGrid3">
-    <div for="hosting-big" class="inline-flex justify-between items-center p-5 w-full h-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-primary-500 peer-checked:border-primary-600 peer-checked:text-primary-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
-      <div class="block">
-        <div class="w-full text-lg font-semibold">🌼 Weed</div>
-        <div class="w-full">Ragweed, sagebrush etc.</div>
-      </div>
-      <ArrowRightOutline class="ms-3 w-6 h-6" />
-    </div>
-    </Radio>
-  </div>
-
     </div>
 
     <div class="">
