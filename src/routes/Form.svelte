@@ -6,7 +6,7 @@
   import { ArrowRightOutline } from 'flowbite-svelte-icons';
   import PollenOption from '$lib/PollenOption.svelte';
 
-  const defaultPollen = 'grassIndex';
+  const defaultPollen = 'graminales';
 
   let coords = null;
   let count = 0;
