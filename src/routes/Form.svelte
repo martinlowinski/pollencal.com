@@ -31,7 +31,7 @@
       <div class="col-12">
       <div class="form-floating mb-0">
         <Label for="locationInput">Your location</Label>
-        <Input bind:value={inputLocation} class="form-control" type="text" size="lg" placeholder="Berlin" id="locationInput" aria-label="Your location" />
+        <Input bind:value={inputLocation} class="form-control" type="text" size="lg" placeholder="e.g. Berlin" id="locationInput" aria-label="Your location" />
       </div>
       <div class="col-12 mb-2">
         <span class="text-sm font-light text-black-900">Translated into the following coordinates: {#if coords}{coords}{/if}</span>
