@@ -14,9 +14,9 @@
     <div class="lg:w-2/3 mx-auto">
       <p class="text-xl font-light text-gray-600 pt-6 pb-12">Get the pollen forecast for your location directly into your calendar. This webcal uses emojis to display a 5 days forecast of various pollen indexes. Enter your city, select your pollen index and adjust your preferences the get the feed. Works with all calendars supporting online .ics and emojis, like Google Calendar, Apple Calendar, Outlook or others.</p>
     </div>
-    <div class="overflow-hidden" style="max-height: 30vh;">
+    <div class="lg:w-3/4 mx-auto overflow-hidden" style="max-height: 30vh;">
       <div class="px-5">
-        <img src="{screenshot}" class="mx-auto border rounded-3 drop-shadow-xl mb-4" alt="Screenshot of calendar" width="700" height="500" loading="lazy">
+        <img src="{screenshot}" class="mx-auto" alt="Screenshot of calendar" loading="lazy">
       </div>
     </div>
   </div>
