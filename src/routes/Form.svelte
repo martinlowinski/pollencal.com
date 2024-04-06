@@ -12,7 +12,7 @@
   let count = 0;
   let inputLocation = '';
   let selectedPollen = defaultPollen;
-  let baseUrl = "webcal://pollen.cloud.lowin.ski/";
+  let baseUrl = "webcal://api.pollencal.com/";
   let distinctId;
   user.subscribe((id) => {
     distinctId = id;
