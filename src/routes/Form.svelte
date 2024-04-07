@@ -3,11 +3,14 @@
   import Geolocation from "svelte-geolocation";
   import { user } from '../store.js';
   import { Button, Input, Label, Radio } from 'flowbite-svelte';
+  import { Spinner } from 'flowbite-svelte';
+  import { Tooltip } from 'flowbite-svelte';
   import { ArrowRightOutline } from 'flowbite-svelte-icons';
   import PollenOption from '$lib/PollenOption.svelte';
 
   const defaultPollen = 'graminales';
 
+  let getPosition = false;
   let coords = null;
   let count = 0;
   let inputLocation = '';
@@ -19,26 +22,31 @@
   });
 
   $: webcalUrl= `${baseUrl}?location=${coords}&pollen=${selectedPollen}&id=${distinctId}`;
-  $: console.log(selectedPollen);
 </script>
 
-<Geolocation getPosition on:position="{(e) => { coords = [e.detail.coords.latitude, e.detail.coords.longitude] }}"/>
+<Geolocation
+  getPosition="{getPosition}"
+  let:loading
+  on:position="{(e) => { coords = [e.detail.coords.latitude, e.detail.coords.longitude] }}"
+>
 
 <div class="lg:w-2/3 mx-auto px-4 pt-4 my-5">
 <div class="col-lg-6 mx-auto">
   <form class="mb-3">
     <div class="row g-4 align-items-center">
-      <div class="col-12">
-      <div class="form-floating mb-0">
-        <Label for="locationInput">Your location</Label>
-        <Input bind:value={inputLocation} class="form-control" type="text" size="lg" placeholder="e.g. Berlin" id="locationInput" aria-label="Your location" />
-      </div>
-      <div class="col-12 mb-2">
-        <span class="text-sm font-light text-black-900">Translated into the following coordinates: {#if coords}{coords}{/if}</span>
-      </div>
+      <div class="col-6">
+        <Button on:click="{() => (getPosition = true)}" class="font-semibold w-full text-lg" outline>
+          <span class:hidden={!loading}>
+            <Spinner class="me-3" size="4" />
+          </span>
+	  Lookup location
+	</Button>
+        <div class="col-12 mb-3">
+          <span class="text-sm font-light text-black-900">Translated into the following coordinates: {#if coords}{coords}{/if}</span>
+        </div>
     </div>
 
-    <div class="py-4">
+    <div class="py-5 mb-4">
       <div class="grid gap-4 w-full md:grid-cols-2 xl:grid-cols-3">
         <PollenOption bind:val={selectedPollen} name="alder">
           <div slot="title">🌳 Alder</div>
@@ -104,16 +112,22 @@
     </div>
 
     <div class="">
-      <Button target="_blank" rel="noopener" href={webcalUrl} size="lg" class="font-semibold w-full text-lg" disabled={coords == null}>Add to your Calendar</Button>
+      <Button id="add" target="_blank" rel="noopener" href={webcalUrl} size="lg" class="font-semibold w-full text-lg" disabled={coords == null}>Add to your Calendar</Button>
+      {#if !coords}
+        <Tooltip triggeredBy="[id='add']">Please lookup your location first</Tooltip>
+      {/if}
     </div>
   </form>
   {#if coords}
+  <span class="text-sm font-light text-black-900">If nothing happens, copy the following URL and subscribe manually with your calendar app:</span>
   <div class="overflow-x-auto py-4 px-2 font-mono text-sm bg-gray-100 text-center">
     {webcalUrl}
   </div>
   {/if}
 </div>
 </div>
+
+</Geolocation>
 
 <style>
 </style>
