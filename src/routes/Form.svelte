@@ -33,6 +33,9 @@
 <div class="lg:w-2/3 mx-auto px-4 pt-4 my-5">
 <div class="col-lg-6 mx-auto">
   <form class="mb-3">
+    <div class="font-semibold pb-2">
+      1. Retrieve precise location information
+    </div>
     <div class="row g-4 align-items-center">
       <div class="col-6">
         <Button on:click="{() => (getPosition = true)}" class="font-semibold w-full text-lg" outline>
@@ -51,6 +54,9 @@
 	{/if}
     </div>
 
+    <div class="font-semibold pt-8">
+      2. Select your pollen index
+    </div>
     <div class="py-5 mb-4">
       <div class="grid gap-2 lg:gap-4 w-full md:grid-cols-2 xl:grid-cols-3">
         <PollenOption bind:val={selectedPollen} name="alder">
@@ -116,6 +122,9 @@
       </div>
     </div>
 
+    <div class="font-semibold pb-2">
+      3. Subscribe to your individual calendar
+    </div>
     <div class="">
       <Button id="add" target="_blank" rel="noopener" href={webcalUrl} size="lg" class="font-semibold w-full text-lg" disabled={coords == null}>Add to your Calendar</Button>
       {#if !coords}
