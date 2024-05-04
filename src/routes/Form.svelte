@@ -1,11 +1,11 @@
 <script>
-	import { spring } from 'svelte/motion';
+  import { fade } from 'svelte/transition';
   import Geolocation from "svelte-geolocation";
   import { user } from '../store.js';
   import { Button, Input, Label, Radio } from 'flowbite-svelte';
   import { Spinner } from 'flowbite-svelte';
   import { Tooltip } from 'flowbite-svelte';
-  import { ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { ArrowRightOutline, CheckCircleSolid } from 'flowbite-svelte-icons';
   import PollenOption from '$lib/PollenOption.svelte';
 
   const defaultPollen = 'graminales';
@@ -36,14 +36,19 @@
     <div class="row g-4 align-items-center">
       <div class="col-6">
         <Button on:click="{() => (getPosition = true)}" class="font-semibold w-full text-lg" outline>
-          <span class:hidden={!loading}>
-            <Spinner class="me-3" size="4" />
-          </span>
 	  Lookup location
+          <span class:hidden={!loading}>
+            <Spinner class="ms-2" size="4" />
+          </span>
+          <span class:hidden={!coords}>
+            <CheckCircleSolid class="ms-2" />
+          </span>
 	</Button>
-        <div class="col-12 mb-3">
+	{#if coords}
+        <div class="col-12" transition:fade={{ delay: 250, duration: 300 }}>
           <span class="text-sm font-light text-black-900">Translated into the following coordinates: {#if coords}{coords}{/if}</span>
         </div>
+	{/if}
     </div>
 
     <div class="py-5 mb-4">
