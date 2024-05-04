@@ -1,9 +1,9 @@
 import posthog from 'posthog-js'
 import { browser } from '$app/environment';
 import { user } from '../store.js';
+import { loadTranslations } from '$lib/translations';
 
 export const load = async () => {
-
   if (browser) {
     posthog.init(
       'phc_FXmprHjO6NogQICHZX6p18CWPsoeOi4xrNKjcemXmnN',
@@ -17,5 +17,9 @@ export const load = async () => {
       }
     )
   }
-  return
+
+	const initLocale = 'en'; // get from cookie, user session, ...
+	await loadTranslations(initLocale); // keep this just before the `return`
+
+	return {};
 };

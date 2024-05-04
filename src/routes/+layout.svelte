@@ -12,10 +12,8 @@ onMount(() => {
   if (typeof window !== 'undefined') {
     const unsubscribePage = page.subscribe(($page) => {
       if (currentPath && currentPath !== $page.url.pathname) {
-        console.log('leaving')
         posthog.capture('$pageleave');
       }
-      console.log('entering')
       currentPath = $page.url.pathname;
       posthog.capture('$pageview');
     });
