@@ -2,6 +2,9 @@ import posthog from 'posthog-js'
 import { browser } from '$app/environment';
 import { user } from '../store.js';
 import { loadTranslations } from '$lib/translations';
+import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
+
+injectSpeedInsights();
 
 export const load = async () => {
   if (browser) {
