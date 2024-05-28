@@ -5,7 +5,7 @@
   import { Button, Input, Label, Radio } from 'flowbite-svelte';
   import { Spinner } from 'flowbite-svelte';
   import { Tooltip } from 'flowbite-svelte';
-  import { ArrowRightOutline, CheckCircleSolid } from 'flowbite-svelte-icons';
+  import { ArrowRightOutline, CheckCircleSolid, ExclamationCircleSolid } from 'flowbite-svelte-icons';
   import PollenOption from '$lib/PollenOption.svelte';
 
   const defaultPollen = null;// = 'graminales';
@@ -27,32 +27,41 @@
 <Geolocation
   getPosition="{getPosition}"
   let:loading
+  let:error
   on:position="{(e) => { coords = [e.detail.coords.latitude, e.detail.coords.longitude] }}"
 >
 
 <div class="lg:w-2/3 mx-auto px-4 pt-4 my-5">
-<div class="col-lg-6 mx-auto">
-  <form class="mb-3">
-    <div class="font-semibold pb-2">
-      1. Retrieve precise location information
-    </div>
-    <div class="row g-4 align-items-center">
-      <div class="col-6">
-        <Button on:click="{() => (getPosition = true)}" class="font-semibold w-full text-lg">
-	  Lookup location
-          <span class:hidden={!loading}>
-            <Spinner class="ms-2" size="4" />
-          </span>
-          <span class:hidden={!coords}>
-            <CheckCircleSolid class="ms-2" />
-          </span>
-	</Button>
-	{#if coords}
-        <div class="col-12" transition:fade={{ delay: 250, duration: 300 }}>
-          <span class="text-sm font-light text-black-900">Translated into the following coordinates: {#if coords}{coords}{/if}</span>
+  <div class="col-lg-6 mx-auto">
+    <form class="mb-3">
+      <div class="font-semibold pb-2">
+        1. Retrieve precise location information
+      </div>
+      <div class="row g-4 align-items-center">
+        <div class="col-6">
+          <Button on:click="{() => (getPosition = true)}" class="font-semibold w-full text-lg">
+      Lookup location
+            <span class:hidden={!loading}>
+              <Spinner class="ms-2" size="4" />
+            </span>
+            <span class:hidden={!coords}>
+              <CheckCircleSolid class="ms-2" />
+            </span>
+            <span class:hidden={!error}>
+              <ExclamationCircleSolid class="ms-2" />
+            </span>
+          </Button>
+          {#if coords}
+          <div class="col-12" transition:fade={{ delay: 250, duration: 300 }}>
+            <span class="text-sm font-light text-black-900">Translated into the following coordinates: {#if coords}{coords}{/if}</span>
+          </div>
+          {/if}
+          {#if error}
+          <div class="col-12" transition:fade={{ delay: 250, duration: 300 }}>
+            <span class="text-sm font-normal text-red-900">Sorry, there was an error: {error.message}</span>
+          </div>
+          {/if}
         </div>
-	{/if}
-    </div>
 
     <div class="font-semibold pt-8">
       2. Select your pollen index
