@@ -12,7 +12,7 @@
   <div class="px-4 pt-5 my-5 text-center border-b">
     <h1 class="text-5xl font-bold py-4">{$t('common.title')}</h1>
     <div class="lg:w-2/3 mx-auto">
-      <p class="text-xl font-light text-gray-600 pt-6 pb-12">{$t('common.intro')}</p>
+      <p class="text-xl font-light text-gray-700 pt-6 pb-12">{$t('common.intro')}</p>
     </div>
     <div class="w-full lg:w-3/4 mx-auto overflow-hidden" style="max-height: 30vh;">
       <div class="px-5">
