@@ -1,6 +1,6 @@
 <script>
   import { Button, Input, Label, Radio } from 'flowbite-svelte';
-  import { ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { ArrowRightOutline, CheckCircleSolid } from 'flowbite-svelte-icons';
 
   /** @type {string} */
   export let name;
@@ -15,7 +15,11 @@
     <div>
       <div class="w-full text-lg font-semibold"><slot name="title" /></div>
     </div>
-    <ArrowRightOutline class="ms-3 w-6 h-6" />
+    {#if name == val}
+      <CheckCircleSolid class="ms-3 w-6 h-6" />
+    {:else}
+      <ArrowRightOutline class="ms-3 w-6 h-6" />
+    {/if}
   </div>
 </Radio>
 
