@@ -1,5 +1,6 @@
 <script>
   import Form from './Form.svelte';
+  import Mockup from '$lib/Mockup.svelte';
   import screenshot from '$lib/images/pollencal-screenshot.png';
   import { Range, Label } from 'flowbite-svelte';
   import { t } from '$lib/translations';
@@ -12,26 +13,20 @@
 </svelte:head>
 
 <section class="container mx-auto py-4">
-  <div class="px-4 pt-5 my-4 text-center border-b">
-    <h1 class="text-5xl font-bold pb-2">{$t('common.title')}</h1>
-    <div class="lg:w-2/3 mx-auto">
-      <h2 class="text-xl font-light text-gray-700 pt-6 pb-8">{$t('common.intro')}</h2>
-    </div>
-    <div class="w-96 mx-auto mb-16">
-      <Label>Emoji for Universal Pollen Index of {minmaxValue}</Label>
-      <div class="relative mb-6">
-        <Range id="range-minmax" min="0" max="5" bind:value={minmaxValue} class="w-full h-2 appearance-none cursor-pointer" />
-        <span class="text-lg text-gray-500 dark:text-gray-400 absolute start-0 -bottom-6">😄</span>
-        <span class="text-lg text-gray-500 dark:text-gray-400 absolute -translate-x-1/2 rtl:translate-x-1/2 -bottom-6" style="inset-inline-start: 21%">🙂</span>
-        <span class="text-lg text-gray-500 dark:text-gray-400 absolute -translate-x-1/2 rtl:translate-x-1/2 -bottom-6" style="inset-inline-start: 40%">😐</span>
-        <span class="text-lg text-gray-500 dark:text-gray-400 absolute -translate-x-1/2 rtl:translate-x-1/2 -bottom-6" style="inset-inline-start: 60%">🙁</span>
-        <span class="text-lg text-gray-500 dark:text-gray-400 absolute -translate-x-1/2 rtl:translate-x-1/2 -bottom-6" style="inset-inline-start: 79%">🤧</span>
-        <span class="text-lg text-gray-500 dark:text-gray-400 absolute end-0 -bottom-6">😵</span>
-      </div>
-    </div>
-    <div class="w-full lg:w-3/4 mx-auto overflow-hidden" style="max-height: 30vh;">
-      <div class="px-5">
-        <img src="{screenshot}" class="mx-auto" alt="Screenshot of subscribed calendar" loading="lazy">
+  <div class="overflow-hidden bg-white py-20 sm:py-28">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+        <div class="lg:pr-8 lg:pt-4">
+          <div class="lg:max-w-lg">
+            <h2 class="text-base font-semibold leading-7 text-primary-600">Emoji-first</h2>
+            <h1 class="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">Pollen Forecast Webcal</h1>
+            <p class="mt-6 text-lg leading-8 text-gray-600">Get the pollen forecast for your location directly into your calendar. This webcal uses emojis to display a forecast of various pollen indexes for up to 5 days. Lookup your location and select your pollen index to get your individual calendar feed. Works with all calendars supporting online .ics and emojis, like Google Calendar, Apple Calendar, Outlook or others.</p>
+            <div class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
+              <a href="#" class="rounded-md bg-primary-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600">Get started</a>
+            </div>
+          </div>
+        </div>
+        <Mockup />
       </div>
     </div>
   </div>
