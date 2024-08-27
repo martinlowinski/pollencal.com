@@ -26,7 +26,7 @@
             </div>
           </div>
           <div class="grid grid-cols-[32px_1fr] gap-y-6">
-            <div class="w-3 fill-gray-500 pt-1.5">
+            <div class="w-3 fill-primary-600 pt-1.5">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                 <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                 <path d="M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z" />
@@ -42,7 +42,7 @@
                 <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
               </svg>
             </div>
-            <div>48.0, 9.116</div>
+            <div>Stuttgart, Germany</div>
             <div class="w-3 fill-gray-500 pt-1.5">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                 <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -50,8 +50,9 @@
               </svg>
             </div>
             <div>
-              <p class="mb-5">Universal Pollen Index: 1 (0: None, 5: Very High)</p>
-              <p class="mb-5">Health recommendations: People with very high allergy to pollen are likely to experience symtoms</p>
+              <p class="mb-0">Universal Pollen Index: 1</p>
+              <p class="mb-5">(0: None, 5: Very High)</p>
+              <p class="mb-5">Health recommendations: People with very high allergy to pollen are likely to experience symptoms.</p>
               <p>Currently in season: No</p>
             </div>
             <div class="w-3 fill-gray-500">
