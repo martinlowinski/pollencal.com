@@ -31,10 +31,10 @@
   on:position="{(e) => { coords = [e.detail.coords.latitude, e.detail.coords.longitude] }}"
 >
 
-<div class="lg:w-2/3 mx-auto px-4 pt-4 my-5">
+<div class="lg:w-2/3 mx-auto px-4 pt-4 my-12">
   <div class="col-lg-6 mx-auto">
     <form class="mb-3">
-      <div class="font-semibold pb-2">
+      <div class="text-lg font-semibold pb-2">
         1. Retrieve precise location information
       </div>
       <div class="row g-4 align-items-center">
@@ -63,7 +63,7 @@
           {/if}
         </div>
 
-    <div class="font-semibold pt-8">
+    <div class="text-lg font-semibold pt-8">
       2. Select your pollen index
     </div>
     <div class="py-5 mb-4">
@@ -131,7 +131,7 @@
       </div>
     </div>
 
-    <div class="font-semibold pb-2">
+    <div class="text-lg font-semibold pb-2">
       3. Subscribe to your individual calendar
     </div>
     <div class="">
