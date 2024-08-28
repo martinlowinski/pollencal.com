@@ -15,9 +15,9 @@
 <section class="container mx-auto py-4">
   <div class="overflow-hidden bg-white py-20 sm:py-28">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+      <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-[2fr_1fr]">
         <div class="lg:pr-8 lg:pt-4">
-          <div class="lg:max-w-lg">
+          <div class="lg:max-w-2xl">
             <h2 class="text-base font-semibold leading-7 text-primary-600">Emoji-first</h2>
             <h1 class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-5xl">Pollen Forecast Webcal</h1>
             <p class="mt-6 text-lg leading-8 text-gray-600">Get the pollen forecast for your location directly into your calendar. This webcal uses emojis to display a forecast of various pollen indexes for up to 5 days. Lookup your location and select your pollen index to get your individual calendar feed. Works with all calendars supporting online .ics and emojis, like Google Calendar, Apple Calendar, Outlook or others.</p>
