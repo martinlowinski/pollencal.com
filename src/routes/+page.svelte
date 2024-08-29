@@ -1,11 +1,7 @@
 <script>
   import Form from './Form.svelte';
   import Mockup from '$lib/Mockup.svelte';
-  import screenshot from '$lib/images/pollencal-screenshot.png';
-  import { Range, Label } from 'flowbite-svelte';
   import { t } from '$lib/translations';
-
-  let minmaxValue = 4;
 </script>
 
 <svelte:head>
