@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { config } from '$lib/store.js'
 </script>
 
 <div class="relative mx-auto h-[600px] w-[300px] rounded-[2.5rem] border-[14px] border-gray-800 bg-gray-800 dark:border-gray-800">
@@ -33,7 +34,7 @@
               </svg>
             </div>
             <div>
-              <div class="text-base">🌱 Grass pollen: 🙂</div>
+              <div class="text-base">🌱 Birch pollen: 🙂</div>
               <div class="text-gray-700">Tomorrow</div>
             </div>
             <div class="w-3 fill-gray-500">
@@ -42,7 +43,7 @@
                 <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
               </svg>
             </div>
-            <div>Stuttgart, Germany</div>
+            <div>{$config.coords || "Stuttgart, Germany"}</div>
             <div class="w-3 fill-gray-500 pt-1.5">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                 <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -68,7 +69,7 @@
                 <path d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40L64 64C28.7 64 0 92.7 0 128l0 16 0 48L0 448c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-256 0-48 0-16c0-35.3-28.7-64-64-64l-40 0 0-40c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40L152 64l0-40zM48 192l352 0 0 256c0 8.8-7.2 16-16 16L64 464c-8.8 0-16-7.2-16-16l0-256z" />
               </svg>
             </div>
-            <div>Pollencal.com</div>
+            <div>pollencal.com</div>
           </div>
         </div>
       </div>

@@ -2,11 +2,12 @@
   import { fade } from 'svelte/transition';
   import Geolocation from "svelte-geolocation";
   import { user } from '../store.js';
-  import { Button, Input, Label, Radio } from 'flowbite-svelte';
+  import { Button } from 'flowbite-svelte';
   import { Spinner } from 'flowbite-svelte';
   import { Tooltip } from 'flowbite-svelte';
-  import { ArrowRightOutline, CheckCircleSolid, ExclamationCircleSolid } from 'flowbite-svelte-icons';
+  import { CheckCircleSolid, ExclamationCircleSolid } from 'flowbite-svelte-icons';
   import PollenOption from '$lib/PollenOption.svelte';
+  import { config } from '$lib/store.js'
 
   const defaultPollen = null;// = 'graminales';
 
@@ -15,13 +16,14 @@
   let count = 0;
   let inputLocation = '';
   let selectedPollen = defaultPollen;
-  let baseUrl = "webcal://api.pollencal.com/";
+  const baseUrl = "webcal://api.pollencal.com/";
   let distinctId;
   user.subscribe((id) => {
     distinctId = id;
   });
 
   $: webcalUrl= `${baseUrl}?location=${coords}&pollen=${selectedPollen}&id=${distinctId}`;
+  $: $config.coords = coords;
 </script>
 
 <Geolocation
