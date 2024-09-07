@@ -58,6 +58,7 @@ onMount(() => {
       <div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
         <p class="text-muted-foreground text-center text-sm leading-loose md:text-left">Made with love by
           <a href="https://martinlowinski.de" target="_blank" rel="noreferrer" class="font-medium underline underline-offset-4">Martin Lowinski</a>.
+          Built using sveltekit and python flask.
         </p>
       </div>
     </div>
