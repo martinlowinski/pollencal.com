@@ -33,8 +33,8 @@
   on:position="{(e) => { coords = [e.detail.coords.latitude, e.detail.coords.longitude] }}"
 >
 
-<div id="setup" class="lg:w-2/3 mx-auto px-4 pt-4 my-12">
-  <div class="col-lg-6 mx-auto">
+<div id="setup" class="mx-auto pt-4 my-16">
+  <div class="mx-auto">
     <form class="mb-3">
       <div class="text-lg font-semibold pb-2">
         1. Retrieve precise location information
