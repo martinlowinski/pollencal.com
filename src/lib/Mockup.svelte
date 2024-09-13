@@ -11,7 +11,7 @@
     <div class="absolute -right-2 top-20 border border-4 border-black h-10 rounded-md"></div>
     <div class="absolute -right-2 top-44 border border-4 border-black h-24 rounded-md"></div>
 
-    <div class="h-[510px] w-[250px] overflow-hidden rounded-[2rem] bg-white dark:bg-gray-800">
+    <div class="h-[510px] w-[260px] overflow-hidden rounded-[2rem] bg-white dark:bg-gray-800">
       <div class="">
         <div class="relative bg-white px-4 pb-8 pt-14">
           <div class="text-xs">
