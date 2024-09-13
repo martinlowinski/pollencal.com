@@ -159,13 +159,14 @@
             {/if}
           </div>
         </div>
+
+        {#if coords && selectedPollen}
+        <span class="text-sm font-light text-black-900">If nothing happens, copy the following URL and subscribe manually with your calendar app:</span>
+        <div class="overflow-x-auto break-all py-4 px-2 font-mono text-sm bg-gray-100 text-center">
+          {webcalUrl}
+        </div>
+        {/if}
       </form>
-      {#if coords && selectedPollen}
-      <span class="text-sm font-light text-black-900">If nothing happens, copy the following URL and subscribe manually with your calendar app:</span>
-      <div class="overflow-x-auto py-4 px-2 font-mono text-sm bg-gray-100 text-center">
-        {webcalUrl}
-      </div>
-      {/if}
     </div>
   </div>
 </Geolocation>
