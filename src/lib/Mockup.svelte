@@ -2,7 +2,7 @@
   import { config } from '$lib/store.js'
 </script>
 
-<div class="relative flex justify-center h-[580px] w-[280px] border border-4 border-black rounded-2xl cursor-default select-none"
+<div class="relative flex justify-center h-[580px] w-[280px] border border-4 border-black rounded-2xl bg-white cursor-default select-none"
     style="box-shadow: 10px 10px 5px 12px rgb(209, 218, 218)">
     <!-- punch hole camera -->
     <div class="absolute -top-0 z-10 border border-black bg-black w-3 h-3 mt-2 rounded-full"></div>
