@@ -81,7 +81,7 @@
             </div>
           </div>
           <div class="py-2 mb-4">
-            <div class="grid gap-2 lg:gap-4 w-full md:grid-cols-2 xl:grid-cols-3">
+            <div class="grid gap-2 lg:gap-4 w-full md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
               <PollenOption bind:val={selectedPollen} name="alder">
                 <div slot="title">🌳 Alder</div>
                 <div slot="description">...</div>
