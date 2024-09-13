@@ -8,7 +8,7 @@
 <title>Pollen Forecast Webcal</title>
 </svelte:head>
 
-<div class="container mx-auto max-w-7xl my-12 flex flex-col gap-10 items-start md:my-20 lg:flex-row">
+<div class="container mx-auto max-w-7xl my-20 flex flex-col gap-10 items-start md:my-20 lg:flex-row">
   <div class="ml-0 md:ml-8 lg:w-full">
     <div class="lg:max-w-2xl">
       <h2 class="text-base font-semibold leading-7 text-primary-600">Emoji-first</h2>

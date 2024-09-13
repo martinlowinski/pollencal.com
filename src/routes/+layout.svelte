@@ -33,7 +33,9 @@ onMount(() => {
 </script>
 
 <div class="app">
-	<header class="bg-white">
+  <div class="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(43,142,67,0.13)_0,rgba(43,142,67,0)_50%,rgba(43,142,67,0)_100%)]"></div>
+
+	<header class="">
 	  <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
 	    <div class="flex lg:flex-1">
 	      <a href="/" class="-m-1.5 p-1.5">
