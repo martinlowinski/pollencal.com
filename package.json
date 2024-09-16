@@ -30,7 +30,7 @@
 	"type": "module",
 	"dependencies": {
 		"@vercel/speed-insights": "^1.0.12",
-		"posthog-js": "^1.161.3",
+		"posthog-js": "^1.161.5",
 		"sveltekit-i18n": "^2.4.2"
 	}
 }
