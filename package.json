@@ -25,12 +25,12 @@
 		"svelte-geolocation": "^1.0.0",
 		"tailwindcss": "^3.4.13",
 		"typescript": "^5.6.2",
-		"vite": "^5.4.7"
+		"vite": "^5.4.8"
 	},
 	"type": "module",
 	"dependencies": {
 		"@vercel/speed-insights": "^1.0.12",
-		"posthog-js": "^1.164.1",
+		"posthog-js": "^1.165.0",
 		"sveltekit-i18n": "^2.4.2"
 	}
 }
