@@ -62,7 +62,7 @@ onMount(() => {
       <div class="flex flex-col items-center gap-4 md:flex-row md:gap-2">
         <p class="text-muted-foreground text-sm leading-loose">Made with love by
           <a href="https://martinlowinski.de" target="_blank" rel="noreferrer" class="font-medium underline underline-offset-4">Martin Lowinski</a>.
-          Built using sveltekit and python flask. Buy me a <a href="https://buymeacoffee.com/martinlowinski" target="_blank" class="font-medium underline underline-offset-4">coffee</a>.
+          Built using sveltekit and python flask. Buy me a <a href="https://buymeacoffee.com/martinlowinski" target="_blank" class="font-medium underline underline-offset-4">coffee</a>. Any <a href="#tally-open=nPYoOQ" class="underline underline-offset-4">feedback</a> is welcome.
         </p>
       </div>
     </div>
