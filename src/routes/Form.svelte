@@ -9,6 +9,69 @@
   import PollenOption from '$lib/PollenOption.svelte';
   import { config } from '$lib/store.js'
 
+  const pollenOptions = [
+	  {
+		  index: "alder",
+		  title: "🌳 Alder"
+	  },
+	  {
+		  index: "ash",
+		  title: "🌳 Ash"
+	  },
+	  {
+		  index: "birch",
+		  title: "🌳 Birch"
+	  },
+	  {
+		  index: "cottonwood",
+		  title: "🌳 Cottonwood"
+	  },
+	  {
+		  index: "elm",
+		  title: "🌳 Elm"
+	  },
+	  {
+		  index: "maple",
+		  title: "🌳 Maple"
+	  },
+	  {
+		  index: "olive",
+		  title: "🌳 Olive"
+	  },
+	  {
+		  index: "juniper",
+		  title: "🌳 Juniper"
+	  },
+	  {
+		  index: "oak",
+		  title: "🌳 Oak"
+	  },
+	  {
+		  index: "pine",
+		  title: "🌳 Pine"
+	  },
+	  {
+		  index: "cypress_pine",
+		  title: "🌳 Cypress Pine"
+	  },
+	  {
+		  index: "hazel",
+		  title: "🌳 Hazel"
+	  },
+	  {
+		  index: "graminales",
+		  title: "🌱 Grasses",
+      description: "There are hundreds of types of grasses, but only a few cause allergy symptoms."
+	  },
+	  {
+		  index: "ragweed",
+		  title: "🌼 Ragweed"
+	  },
+	  {
+		  index: "mugwort",
+		  title: "🌼 Mugwort"
+	  },
+  ];
   const defaultPollen = null;// = 'graminales';
 
   let getPosition = false;
@@ -24,6 +87,7 @@
 
   $: webcalUrl= `${baseUrl}?location=${coords}&pollen=${selectedPollen}&id=${distinctId}`;
   $: $config.coords = coords;
+  $: $config.selectedPollen = pollenOptions.find(o => o.index === selectedPollen)?.title;
 </script>
 
 <Geolocation
@@ -44,66 +108,12 @@
           </div>
           <div class="py-2 mb-4">
             <div class="grid gap-2 lg:gap-4 w-full md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-              <PollenOption bind:val={selectedPollen} name="alder">
-                <div slot="title">🌳 Alder</div>
+              {#each pollenOptions as option, i}
+              <PollenOption bind:val={selectedPollen} name={option.index}>
+                <div slot="title">{option.title}</div>
                 <div slot="description">...</div>
               </PollenOption>
-              <PollenOption bind:val={selectedPollen} name="ash">
-                <div slot="title">🌳 Ash</div>
-                <div slot="description">...</div>
-              </PollenOption>
-              <PollenOption bind:val={selectedPollen} name="birch">
-                <div slot="title">🌳 Birch</div>
-                <div slot="description">...</div>
-              </PollenOption>
-              <PollenOption bind:val={selectedPollen} name="cottonwood">
-                <div slot="title">🌳 Cottonwood</div>
-                <div slot="description">...</div>
-              </PollenOption>
-              <PollenOption bind:val={selectedPollen} name="elm">
-                <div slot="title">🌳 Elm</div>
-                <div slot="description">...</div>
-              </PollenOption>
-              <PollenOption bind:val={selectedPollen} name="maple">
-                <div slot="title">🌳 Maple</div>
-                <div slot="description">...</div>
-              </PollenOption>
-              <PollenOption bind:val={selectedPollen} name="olive">
-                <div slot="title">🌳 Olive</div>
-                <div slot="description">...</div>
-              </PollenOption>
-              <PollenOption bind:val={selectedPollen} name="juniper">
-                <div slot="title">🌳 Juniper</div>
-                <div slot="description">...</div>
-              </PollenOption>
-              <PollenOption bind:val={selectedPollen} name="oak">
-                <div slot="title">🌳 Oak</div>
-                <div slot="description">...</div>
-              </PollenOption>
-              <PollenOption bind:val={selectedPollen} name="pine">
-                <div slot="title">🌳 Pine</div>
-                <div slot="description">...</div>
-              </PollenOption>
-              <PollenOption bind:val={selectedPollen} name="cypress_pine">
-                <div slot="title">🌳 Cypress Pine</div>
-                <div slot="description">...</div>
-              </PollenOption>
-              <PollenOption bind:val={selectedPollen} name="hazel">
-                <div slot="title">🌳 Hazel</div>
-                <div slot="description">...</div>
-              </PollenOption>
-              <PollenOption bind:val={selectedPollen} name="graminales">
-                <div slot="title">🌱 Grasses</div>
-                <div slot="description">There are hundreds of types of grasses, but only a few cause allergy symptoms.</div>
-              </PollenOption>
-              <PollenOption bind:val={selectedPollen} name="ragweed">
-                <div slot="title">🌼 Ragweed</div>
-                <div slot="description">...</div>
-              </PollenOption>
-              <PollenOption bind:val={selectedPollen} name="mugwort">
-                <div slot="title">🌼 Mugwort</div>
-                <div slot="description">...</div>
-              </PollenOption>
+              {/each}
             </div>
           </div>
         </div>

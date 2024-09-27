@@ -38,7 +38,7 @@
                 </svg>
               </div>
               <div>
-                <div class="text-base">🌱 Birch pollen: 🙂</div>
+                <div class="text-base">{$config.selectedPollen || "🌱 Birch"} pollen: 🙂</div>
                 <div class="text-gray-700">Tomorrow</div>
               </div>
               <div class="w-3 fill-gray-500">
