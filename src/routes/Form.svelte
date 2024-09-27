@@ -35,47 +35,9 @@
   <div id="setup" class="mx-auto pt-4 my-24">
     <div class="mx-auto">
       <form class="">
-        <div class="py-10">
+        <div class="py-8">
           <div class="text-xl pb-4 flex items-center justify-between">
-            1. Retrieve precise location information
-            <div class:hidden={!coords}>
-              <CheckCircleSolid class="" />
-            </div>
-          </div>
-          <div class="row g-4 align-items-center">
-            <div class="col-6">
-              <Button on:click="{() => (getPosition = true)}" class="font-semibold w-full text-lg">
-          Lookup location
-                <span class:hidden={!loading}>
-                  <Spinner class="ms-2" size="4" />
-                </span>
-                <span class:hidden={!coords}>
-                  <CheckCircleSolid class="ms-2" />
-                </span>
-                <span class:hidden={!error}>
-                  <ExclamationCircleSolid class="ms-2" />
-                </span>
-              </Button>
-              {#if !coords}
-              <Tooltip>Please allow the browser to retrieve your location</Tooltip>
-              {/if}
-              {#if coords}
-              <div class="col-12" transition:fade={{ delay: 250, duration: 300 }}>
-                <span class="text-sm font-light text-black-900">Location found: {#if coords}{coords}{/if}</span>
-              </div>
-              {/if}
-              {#if error}
-              <div class="col-12" transition:fade={{ delay: 250, duration: 300 }}>
-                <span class="text-sm font-normal text-red-900">Sorry, there was an error: {error.message}</span>
-              </div>
-              {/if}
-            </div>
-          </div>
-        </div>
-
-        <div class="py-10">
-          <div class="text-xl pb-2 flex items-center justify-between">
-            2. Select your pollen index
+            1. Select your pollen index
             <div class:hidden={!selectedPollen}>
               <CheckCircleSolid class="" />
             </div>
@@ -146,7 +108,44 @@
           </div>
         </div>
 
-        <div class="py-10">
+        <div class="py-8">
+          <div class="text-xl pb-4 flex items-center justify-between">
+            2. Retrieve precise location information
+            <div class:hidden={!coords}>
+              <CheckCircleSolid class="" />
+            </div>
+          </div>
+          <div class="row g-4 align-items-center">
+            <div class="col-6">
+              <Button on:click="{() => (getPosition = true)}" class="font-semibold w-full text-lg">
+          Lookup location
+                <span class:hidden={!loading}>
+                  <Spinner class="ms-2" size="4" />
+                </span>
+                <span class:hidden={!coords}>
+                  <CheckCircleSolid class="ms-2" />
+                </span>
+                <span class:hidden={!error}>
+                  <ExclamationCircleSolid class="ms-2" />
+                </span>
+              </Button>
+              {#if !coords}
+              <Tooltip>Please allow the browser to retrieve your location</Tooltip>
+              {/if}
+              {#if coords}
+              <div class="col-12" transition:fade={{ delay: 250, duration: 300 }}>
+                <span class="text-sm font-light text-black-900">Location found: {#if coords}{coords}{/if}</span>
+              </div>
+              {/if}
+              {#if error}
+              <div class="col-12" transition:fade={{ delay: 250, duration: 300 }}>
+                <span class="text-sm font-normal text-red-900">Sorry, there was an error: {error.message}</span>
+              </div>
+              {/if}
+            </div>
+          </div>
+        </div>
+        <div class="py-8">
           <div class="text-xl pb-4">
             3. Subscribe to your individual calendar
           </div>
