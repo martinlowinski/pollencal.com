@@ -6,6 +6,13 @@ import { onMount } from 'svelte';
 import { page } from "$app/stores";
 import posthog from 'posthog-js';
 import Logo from '$lib/Logo.svelte';
+  /**
+   * @typedef {Object} Props
+   * @property {import('svelte').Snippet} [children]
+   */
+
+  /** @type {Props} */
+  let { children } = $props();
 
 let currentPath = '';
 
@@ -53,7 +60,7 @@ onMount(() => {
 
 	<main>
     <section>
-      <slot />
+      {@render children?.()}
     </section>
 	</main>
 
