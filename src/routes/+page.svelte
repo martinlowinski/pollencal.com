@@ -20,7 +20,9 @@
         Due to high demand from individual users, this service is currently limited to ten requests per day. Please consider <a href="https://buymeacoffee.com/martinlowinski" target="_blank" class="underline underline-offset-4">donating</a>, as the cost of my API has increased by a factor of ~20 in order to keep this service free.
       </Alert>
       <div class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
-        <a href="#setup" class="rounded-md bg-primary-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600">Get started</a>
+        <a href="#setup" class="rounded-md bg-primary-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600">Get started (free)</a>
+        <span class="px-2">or</span>
+        <a href="#tally-open=nrgzlo" class="rounded-md bg-primary-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600">Get Pro</a>
       </div>
 
       <div class="mt-24 flex items-center justify-center md:hidden">
