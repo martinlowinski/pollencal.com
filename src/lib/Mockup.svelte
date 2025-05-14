@@ -55,10 +55,10 @@
                 </svg>
               </div>
               <div>
-                <p class="mb-0">Universal Pollen Index: 1</p>
+                <p class="mb-0">#️ Universal Pollen Index: 1</p>
                 <p class="mb-5">(0: None, 5: Very High)</p>
-                <p class="mb-5">Health recommendations: People with very high allergy to pollen are likely to experience symptoms.</p>
-                <p>Currently in season: No</p>
+                <p class="mb-5">🧑‍⚕️ Health recommendations: People with very high allergy to pollen are likely to experience symptoms.</p>
+                <p>🌼 Currently in season: No</p>
               </div>
               <div class="w-3 fill-gray-500">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
