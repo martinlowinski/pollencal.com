@@ -13,7 +13,7 @@
 
     <div class="h-[510px] w-[260px] overflow-hidden rounded-[2rem] bg-white dark:bg-gray-800">
       <div class="">
-        <div class="relative bg-white px-4 pb-8 pt-14">
+        <div class="relative bg-white px-3 pb-8 pt-14">
           <div class="text-xs">
             <div class="mb-4 grid grid-cols-[32px_1fr_32px]">
               <div class="w-3 place-self-start fill-gray-500">
@@ -58,7 +58,13 @@
                 <p class="mb-0">#️ Universal Pollen Index: 1</p>
                 <p class="mb-5">(0: None, 5: Very High)</p>
                 <p class="mb-5">🧑‍⚕️ Health recommendations: People with very high allergy to pollen are likely to experience symptoms.</p>
-                <p>🌼 Currently in season: No</p>
+                <p class="mb-5">🌼 Currently in season: No</p>
+                <p>📊 Top pollen today:</p>
+                <ul class="list-disc list-inside">
+                  <li>Oak with UPI of 3 (Medium)</li>
+                  <li>Graminales with UPI of 3 (Medium)</li>
+                  <li>Ash with UPI of 2 (Low)</li>
+                </ul>
               </div>
               <div class="w-3 fill-gray-500">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
